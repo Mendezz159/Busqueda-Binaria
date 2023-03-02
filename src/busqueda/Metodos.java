@@ -35,7 +35,7 @@ public class Metodos {
     public static ArrayList<Integer> generarRectaNumerica(int tamano) {
         ArrayList<Integer> arrayList = new ArrayList<>(tamano);
         for (int i = 0; i < tamano; i++) {
-            arrayList.add(i);
+            arrayList.add(i+1);
         }
         return arrayList;
     }

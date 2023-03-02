@@ -6,6 +6,7 @@ package busqueda;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 /**
  *
@@ -40,7 +41,15 @@ public class Busqueda {
     }
     
     public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Ingresa el tipo del arreglo\n- ");
+        int Tipo = in.nextInt();
+        System.out.print("Ingresa el tamaño del arreglo\n- ");
+        int Tamaño = in.nextInt();
         
+        long TiempoGeneracion = Generar(Tipo, Tamaño);
+        
+        System.out.print("Arreglo: "+Lista+"\nTiempo de generacion"+TiempoGeneracion);
     }
     
 }
