@@ -52,15 +52,17 @@ public class Busqueda {
             ArrayList<Integer> sublista = new ArrayList<>();
             int inicio;
             if (BNum < lista.get(centro)){
-                inicio = Iinicial;
+                inicio = 0;
                 for(int i = inicio ; i<centro ; i++){
                     sublista.add(lista.get(i));
                 }
+                inicio = Iinicial;
             }else{
-                inicio = Iinicial + centro+1;
+                inicio = centro+1;
                 for(int i = inicio ; i<lista.size() ; i++){
                     sublista.add(lista.get(i));
                 }
+                inicio = Iinicial + centro+1;
             }
             posicion=Buscar(inicio, BNum, sublista);
         }
