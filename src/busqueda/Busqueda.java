@@ -44,7 +44,7 @@ public class Busqueda {
         int posicion = Iinicial;
         int centro = lista.size()/2;
         
-        if(lista.size()<=1){
+        if(lista.size()<1){
             posicion = -1;
         }else if(lista.get(centro)== BNum){
             posicion = posicion + centro;
@@ -70,8 +70,14 @@ public class Busqueda {
     
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        System.out.print("Ingresa el tipo del arreglo\n- ");
-        int Tipo = in.nextInt();
+        int Tipo;
+        do{
+            System.out.print("Ingresa el tipo del arreglo\n1. Recta numerica\n2. Aleatoreo\n\n- ");
+            Tipo = in.nextInt();
+            if (Tipo != 1 && Tipo != 2){
+                System.out.println("####El numero que ingresaste no es valido####");
+            }
+        }while(Tipo != 1 && Tipo != 2);
         System.out.print("Ingresa el tamaño del arreglo\n- ");
         int Tamaño = in.nextInt();
         
@@ -82,7 +88,16 @@ public class Busqueda {
         System.out.print("\nIngrese el numero que busca\n- ");
         int busqueda = in.nextInt();
         
-        System.out.println("El indise es "+Buscar(0, busqueda, Lista));
+        long tiempo = System.currentTimeMillis();
+        int indice = Buscar(0, busqueda, Lista);
+        tiempo = System.currentTimeMillis() - tiempo;
+        
+        if(indice==-1){
+            System.out.println("#El numero buscado no se encuentra en la lista#");
+        }else{
+            System.out.println("El indise es "+indice);
+        }
+        System.out.println("\nTiempo de busqueda: "+tiempo);
     }
     
 }
