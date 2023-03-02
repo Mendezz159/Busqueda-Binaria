@@ -49,7 +49,7 @@ public class Busqueda {
         
         long TiempoGeneracion = Generar(Tipo, Tamaño);
         
-        System.out.print("Arreglo: "+Lista+"\nTiempo de generacion"+TiempoGeneracion);
+        System.out.println("Arreglo: "+Lista+"\nTiempo de generacion"+TiempoGeneracion);
     }
     
 }

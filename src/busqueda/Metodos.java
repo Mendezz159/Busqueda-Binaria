@@ -22,7 +22,7 @@ public class Metodos {
         ArrayList<Integer> arrayList = new ArrayList<>(size);
         Random random = new Random();
         for (int i = 0; i < size; i++) {
-            arrayList.add(random.nextInt());
+            arrayList.add(random.nextInt(1, size+1));
         }
         return arrayList;
     }
