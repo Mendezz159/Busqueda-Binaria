@@ -5,7 +5,6 @@
 package busqueda;
 
 import java.util.ArrayList;
-import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -14,6 +13,11 @@ import java.util.Scanner;
  */
 public class Busqueda {
 
+    
+    public Busqueda(){
+        
+    }
+    
     private static ArrayList<Integer> Lista = new ArrayList<>();
     
     /**
@@ -23,7 +27,7 @@ public class Busqueda {
      * @return tiempo que se tarda generando en milisegundos
      */
     public static long Generar(int Tipo, int Tamaño){
-        long tiempo = System.currentTimeMillis();
+        long tiempo = System.nanoTime();
         
         switch(Tipo){
             case 1:
@@ -35,7 +39,7 @@ public class Busqueda {
                 break;
         }
         
-        tiempo = System.currentTimeMillis() - tiempo;
+        tiempo = System.nanoTime() - tiempo;
         
         return tiempo;
     }
@@ -70,7 +74,7 @@ public class Busqueda {
         return posicion;
     }
     
-    public static void main(String[] args) {
+    public static void visualizar(){
         Scanner in = new Scanner(System.in);
         int Tipo;
         do{
@@ -90,16 +94,20 @@ public class Busqueda {
         System.out.print("\nIngrese el numero que busca\n- ");
         int busqueda = in.nextInt();
         
-        long tiempo = System.currentTimeMillis();
+        long tiempo = System.nanoTime();
         int indice = Buscar(0, busqueda, Lista);
-        tiempo = System.currentTimeMillis() - tiempo;
-        
+        tiempo = System.nanoTime() - tiempo;
+                
         if(indice==-1){
             System.out.println("#El numero buscado no se encuentra en la lista#");
         }else{
             System.out.println("El indise es "+indice);
         }
         System.out.println("\nTiempo de busqueda: "+tiempo);
+    }
+    
+    public static void main(String[] args) {
+        visualizar();
     }
     
 }
